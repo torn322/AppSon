@@ -1,0 +1,136 @@
+$blue: #0f7bff
+$grey: #929292
+$dark: #333333
+    
+body
+    font-family: 'Quicksand'
+    overflow-x: hidden
+    margin: 0
+    padding: 0
+
+*
+    font-family: 'Quicksand'
+    // border: 1px solid red
+
+header
+    position: relative
+    overflow-y: hidden
+    background-image: url('../img/header_bg.svg') 
+    // background-position: 20px 0
+    background-size: cover
+    background-repeat: no-repeat
+    height: 100vh
+    width: 100vw
+
+a
+    text-decoration: none
+
+p 
+    margin: 0
+    padding: 0
+
+.nav
+    top: 0
+    box-sizing: border-box
+    position: fixed
+    width: 100%
+    padding: 0 140px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &__logo
+        width: max-content
+        border-bottom-left-radius: 21.5px
+        border-bottom-right-radius: 21.5px
+        background-color: $blue
+        color: #ffffff
+        font-size: 36px
+        font-weight: 700
+        & span
+            display: block
+            width: max-content
+            margin: 0 auto
+            padding: 34px 24px
+    &__menu
+        list-style: none
+        display: flex
+        justify-content: space-between
+        align-items: center
+        width: 570px
+        text-transform: uppercase
+    &__link
+        color: $grey
+        font-size: 16px
+        font-weight: 500
+        &_active
+            color: $blue
+    
+.btn
+    padding: 16px 45px
+    font-size: 16px
+    font-weight: 700
+    border-radius: 999px
+    outline: none
+    border: none
+    cursor: pointer
+    &_nav
+        color: #ffffff
+        background: #0063dd
+        padding: 19px 52px
+        text-transform: uppercase
+    &_blue
+        background: $blue
+        color: #fff
+    &_white
+        background: #ffffff
+        border: 2px solid $blue
+        color: $blue
+
+.container
+    width: 1140px
+    margin: 0 auto
+
+h1
+    font-size: 36px
+    font-weight: 700
+    color: $dark
+    margin: 0
+    padding: 0
+
+.title
+    width: 615px
+    text-align: center
+    margin: 206px auto 0 auto
+    &__subtitle 
+        color: $grey
+        font-size: 16px
+        margin-top: 33px
+        line-height: 27px
+    &__btns
+        margin: 40px auto 0 auto
+        & .btn
+            margin: 0 15px
+
+.device
+    position: absolute
+    background: url('../img/device.png')
+    width: 920px
+    height: 555px
+    left: calc(50% - 460px)
+    bottom: -25px
+
+.arrow
+    display: block
+    font-size: 25px
+    padding: 10px 15px
+    color: #ffffff
+    background: $blue
+    border-radius: 999px
+    box-shadow: 0px 0px 10px $grey
+    position: absolute
+    bottom: 10px
+    left: calc(50vw - 26.5px)
+    cursor: pointer
+    opacity: .5
+    &:hover
+        opacity: 1

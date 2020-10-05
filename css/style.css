@@ -182,4 +182,56 @@ h1 {
 .arrow:hover {
   opacity: 1;
 }
+
+.section_blue {
+  background: #f5fcfd;
+}
+
+#section-features {
+  padding: 130px 0;
+}
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cards__card {
+  padding: 40px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 0px 25px #f0f0f0;
+          box-shadow: 0px 0px 25px #f0f0f0;
+  width: 360px;
+  height: 290px;
+}
+
+.cards__card_down {
+  margin-top: 50px;
+}
+
+.cards__icon {
+  margin: 0 auto;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.cards h3 {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.cards__text {
+  text-align: center;
+  font-size: 16px;
+  color: #929292;
+  line-height: 27px;
+}
 /*# sourceMappingURL=style.css.map */

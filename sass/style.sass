@@ -1,6 +1,7 @@
 $blue: #0f7bff
 $grey: #929292
 $dark: #333333
+$bg_blue: #f5fcfd
     
 body
     font-family: 'Quicksand'
@@ -134,3 +135,35 @@ h1
     opacity: .5
     &:hover
         opacity: 1
+
+.section_blue
+    background: $bg_blue
+
+#section-features
+    padding: 130px 0
+
+.cards
+    display: flex
+    justify-content: space-between
+    &__card
+        padding: 40px 0
+        box-sizing: border-box
+        border-radius: 5px
+        background: #ffffff
+        box-shadow: 0px 0px 25px #f0f0f0
+        width: 360px
+        height: 290px
+        &_down
+            margin-top: 50px
+    &__icon
+        margin: 0 auto
+        width: max-content
+    h3
+        text-align: center
+        margin: 25px 0 
+    &__text
+        text-align: center
+        font-size: 16px
+        color: $grey
+        line-height: 27px
+

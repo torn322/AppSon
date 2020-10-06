@@ -1,4 +1,4 @@
-$blue: #0f7bff
+$blue: #0f7bff 
 $grey: #929292
 $dark: #333333
 $bg_blue: #f5fcfd
@@ -25,10 +25,13 @@ header
     background-repeat: no-repeat
     height: 100vh
     width: 100vw
+    .title
+        margin: 206px auto 0 auto
 
 footer
-    height: 200px
+    padding-top: 130px
     background: $blue
+    position: relative
 
 
 a
@@ -79,9 +82,10 @@ p
     font-size: 16px
     font-weight: 700
     border-radius: 999px
+    border: 2px solid $blue
     outline: none
-    border: none
     cursor: pointer
+    text-transform: capitalize
     &_nav
         color: #ffffff
         background: #0063dd
@@ -92,8 +96,10 @@ p
         color: #fff
     &_white
         background: #ffffff
-        border: 2px solid $blue
         color: $blue
+    &_square
+        border-radius: 5px
+        padding: 28px 72px
 
 .container
     width: 1140px
@@ -112,11 +118,17 @@ h2
     color: $dark
     margin: 0
     padding: 0
+    text-transform: capitalize
+
+h3
+    text-transform: capitalize
+    color: $dark
+
 
 .title
     width: 615px
     text-align: center
-    margin: 206px auto 0 auto
+    margin: 0 auto 0 auto
     &__subtitle 
         color: $grey
         font-size: 16px
@@ -126,10 +138,23 @@ h2
         margin: 40px auto 0 auto
         & .btn
             margin: 0 15px
+        &_reduced
+            .btn
+                margin: 0
+                &_blue
+                    border-top-right-radius: 0
+                    border-bottom-right-radius: 0
+                &_white
+                    border-bottom-left-radius: 0
+                    border-top-left-radius: 0
+                    margin-left: -4px !important
+
     &_align-left
         text-align: left
         margin: 0
         width: 555px
+    &_reduced
+        width: 360px
     &__link
         display: inline-block
         font-size: 16px
@@ -164,7 +189,7 @@ h2
         opacity: 1
 
 .section_blue
-    background: $bg_blue
+    background-color: $bg_blue
 
 #section-features
     padding: 130px 0
@@ -172,6 +197,21 @@ h2
 .cards
     display: flex
     justify-content: space-between
+    position: relative
+    &_reduced
+        z-index: 1
+        &:after
+            content: ""
+            border-bottom: 1px solid $blue
+            width: 70%
+            display: block
+            position: absolute
+            top: 32%
+            left: 15%
+            z-index: -1
+    &_extended
+        width: 750px
+
     &__card
         padding: 40px 0
         box-sizing: border-box
@@ -182,6 +222,15 @@ h2
         height: 290px
         &_down
             margin-top: 50px
+        &_reduced
+            padding: 50px 0 
+            background: none
+            box-shadow: none
+        &_extended
+            height: 575px
+            .btn
+                display: block
+                margin: 25px auto 0 auto
     &__icon
         margin: 0 auto
         width: max-content
@@ -193,6 +242,33 @@ h2
         font-size: 16px
         color: $grey
         line-height: 27px
+    &__list
+        list-style: none
+        color: $grey
+        font-size: 16px
+        text-align: center
+        margin: 0
+        padding: 0
+        li
+            margin: 16px 0
+            text-transform: capitalize
+    small
+        font-size: 16px
+    &__price
+        color: $blue
+        font-size: 32px
+        display: block
+        width: max-content
+        margin: 0 auto
+    &__underline
+        margin: 0
+        width: 50%
+        display: block
+        margin: 0 auto
+        background-color: #e0e0e0
+        height: 1px
+        border: none
+
 
 
 .about
@@ -219,3 +295,197 @@ h2
             top: unset
             bottom: -130px
             right: -100px
+
+.pricing 
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+
+#section-carousel
+    background-image: url("../img/hands.png")
+    background-repeat: no-repeat
+    background-size: contain
+
+.carousel-wrap
+    margin-left: 880px
+
+.carousel
+    display: flex
+    &__item
+        background-color: #ffffff
+        background-image: url("../img/twitter.png")
+        background-repeat: no-repeat
+        background-position: 313px 40px
+        box-shadow: 0px 0px 25px #f0f0f0
+        min-width: 360px
+        height: 215px
+        margin: 45px 30px 40px 0
+        padding: 40px 30px
+        box-sizing: border-box
+        color: $grey
+    h3
+        margin: 0 0 5px 0
+    &__subtitle
+        display: inline-block
+        margin-bottom: 15px
+        text-transform: capitalize
+    &__page
+        display: block
+        width: 20px
+        height: 10px
+        background: #d4d4d4
+        margin-right: 10px
+        border-radius: 99px
+        &_active
+            width: 30px
+            background: $blue
+    &__pages
+        display: flex
+        width: max-content
+
+.news-wrap
+    display: flex
+    justify-content: space-between
+    margin-top: 50px
+    
+
+.selected-post
+    width: 555px
+    &__img
+        width: 555px
+        height: 285px
+        border-radius: 5px
+        overflow: hidden
+        background-image: url("../img/post1.jpg")
+        background-size: cover
+        background-position: center center
+    &__title
+        display: inline-block
+        margin: 40px 0 20px 0
+        font-size: 24px
+        color: $blue
+        font-weight: 500
+        text-transform: capitalize
+    &__text
+        color: $grey
+        line-height: 27px
+    &__link
+        text-decoration: none
+        color: $blue
+        display: inline-block
+        font-size: 16px
+        font-weight: 500
+        margin-top: 20px
+
+.post-list
+    width: 555px
+    list-style: none
+    margin: 0
+    padding: 0
+    h3
+        margin: 0
+    &__item
+        display: flex
+        justify-content: space-between
+        margin-bottom: 40px
+    &__img
+        width: 165px
+        height: 120px
+        background-image: url("../img/post1.jpg")
+        background-size: cover
+        background-position: center center
+        background-repeat: 5px
+        overflow: hidden
+    &__text
+        width: 360px
+        p
+            margin-top: 20px
+            color: $grey
+            line-height: 27px
+
+
+.trial-wrap
+    width: 750px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0 auto
+    .title
+        width: max-content
+        p
+            margin-top: 15px !important
+
+.bottom-logo
+    display: block
+    max-width: max-content
+    color: #ffffff
+    font-size: 36px
+    margin: 0 auto 35px auto
+    font-weight: 700
+
+.bottom-form
+    display: block
+    width: max-content
+    margin: 0 auto
+    margin-bottom: 130px
+    input
+        width: 390px
+        outline: none
+        border: 2px solid #ffffff
+        background: $blue
+        font-size: 16px
+        padding: 16px 20px
+        border-top-left-radius: 99px
+        border-bottom-left-radius: 99px
+        color: #fff
+        &::placeholder
+            color: #fff
+    .btn
+        border-top-left-radius: 0
+        border-bottom-left-radius: 0
+        margin-left: -6px
+        border-color: #fff
+
+.footer-hr
+    width: 100vw
+
+.footer-links
+    position: relative
+    display: flex
+    justify-content: space-between
+    align-items: center
+    color: #fff
+    padding: 40px 0
+    a
+        color: #ffffff
+    span
+        a
+            margin-right: 35px
+
+.social a
+    display: inline-block
+    width: 20px
+    height: 20px
+    background-repeat: no-repeat
+    background-size: contain
+    margin-right: 10px
+
+
+.twitter
+    background-image: url("../img/twitter.png")
+
+.yt
+    background-image: url("../img/yt.png")
+
+.fb
+    background-image: url("../img/fb.png")   
+
+.scroll-top
+    font-size: 30px
+    background-color: #fff
+    color: $blue
+    border-radius: 5px
+    padding: 4px 16px
+    margin-right: -120px
+    cursor: pointer

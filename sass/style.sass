@@ -60,6 +60,7 @@ p
         color: #ffffff
         font-size: 36px
         font-weight: 700
+        cursor: pointer
         & span
             display: block
             width: max-content
@@ -80,7 +81,25 @@ p
             color: $blue
         &_active
             color: $blue
-    
+    &_fixed
+        position: fixed
+        background-color: #fff
+        z-index: 5
+        box-shadow: 0px 0px 10px #b5b5b5
+        height: 80px
+        .nav__logo span
+            margin-top: 40px
+        .btn
+            padding: 14px 45px
+            background-color: $blue
+
+.hamburger
+    font-size: 25px
+    color: $blue
+    padding: 10px
+    display: none
+
+            
 .btn
     padding: 16px 45px
     font-size: 16px
@@ -95,6 +114,10 @@ p
         background: #0063dd
         padding: 16px 52px
         text-transform: uppercase
+        &:hover
+            color: $blue
+            background: #fff
+            border: 2px solid $blue
     &_blue
         background: $blue
         color: #fff
@@ -216,7 +239,7 @@ h3
             width: 70%
             display: block
             position: absolute
-            top: 32%
+            top: 35%
             left: 15%
             z-index: -1
     &_extended
@@ -323,19 +346,25 @@ h3
 
 .carousel
     display: flex
+    overflow: hidden
     &__item
         background-color: #ffffff
-        background-image: url("../img/twitter.png")
+        background-image: url("../img/tw.png")
         background-repeat: no-repeat
         background-position: 313px 40px
         box-shadow: 0px 0px 25px #f0f0f0
         min-width: 360px
-        height: 215px
+        width: 360px
         margin: 45px 30px 40px 0
         padding: 40px 30px
         box-sizing: border-box
         color: $grey
         line-height: 27px
+        transform: scale(.8)
+        &_selected
+            transform: scale(1)
+        &:first-child
+            margin-left: -195px
     h3
         margin: 0 0 5px 0
     &__subtitle
@@ -349,6 +378,7 @@ h3
         background: #d4d4d4
         margin-right: 10px
         border-radius: 99px
+        cursor: pointer
         &_active
             width: 30px
             background: $blue
@@ -637,10 +667,67 @@ h3
     .container
         width: 420px
 
+    .device
+        display: none
+
+    header
+        overflow: visible
+
     .bottom-form
         input
             width: 190px
             padding: 14px 20px
+
+    .nav
+        padding: 0 3%
+        height: 60px
+        position: fixed !important
+        background: #fff
+        box-shadow: 0px 0px 10px #b5b5b5
+        z-index: 99
+        &__logo
+            border-bottom-left-radius: 14px
+            border-bottom-right-radius: 14px
+            font-size: 25px
+            z-index: 99
+            span
+                margin-top: 35px !important
+                padding: 15px 20px
+        &__menu
+            flex-direction: column
+            position: fixed
+            top: 40px
+            width: 250px
+            right: -270px
+            height: 100vh
+            justify-content: start
+            padding: 20px 0
+            background: $blue
+            z-index: 12
+            .btn
+                background-color: #fff
+                color: $blue        
+                margin: 50px auto 0 auto !important
+                display: block  
+                padding: 14px 45px !important  
+            li
+                display: block
+                width: 250px
+        &__link
+            color: #fff
+            padding: 20px 0
+            display: block
+            margin: 0 auto
+            text-align: center
+            &_active
+                background-color: #fff
+                color: $blue
+        
+            
+
+
+    .hamburger
+        display: block
 
     section
         padding: 80px 0
@@ -683,6 +770,9 @@ h3
     #section-carousel
         background-image: none
 
+    .carousel__item:first-child
+        margin-left: -390px
+
     .carousel-wrap
         margin-left: 10%
 
@@ -709,7 +799,7 @@ h3
         flex-direction: column
         .btn
             margin-top: 40px
-            padding: 14px 100px
+            padding: 14px 93px
 
     .footer-links
         width: 90%
@@ -761,9 +851,11 @@ h3
 
     .carousel
         &__item
-            min-width: 85vw
+            width: 360px
             height: unset
             background-position: 265px 40px
+            &:first-child
+                margin-left: -330px
 
 
 @media screen and (max-width: 374px)
@@ -776,6 +868,7 @@ h3
     
     .carousel__item
         background-position: 230px 40px
+        min-width: 300px
 
     .trial-wrap 
         .title

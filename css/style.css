@@ -72,6 +72,7 @@ p {
   color: #ffffff;
   font-size: 36px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .nav__logo span {
@@ -112,6 +113,31 @@ p {
   color: #0f7bff;
 }
 
+.nav_fixed {
+  position: fixed;
+  background-color: #fff;
+  z-index: 5;
+  -webkit-box-shadow: 0px 0px 10px #b5b5b5;
+          box-shadow: 0px 0px 10px #b5b5b5;
+  height: 80px;
+}
+
+.nav_fixed .nav__logo span {
+  margin-top: 40px;
+}
+
+.nav_fixed .btn {
+  padding: 14px 45px;
+  background-color: #0f7bff;
+}
+
+.hamburger {
+  font-size: 25px;
+  color: #0f7bff;
+  padding: 10px;
+  display: none;
+}
+
 .btn {
   padding: 16px 45px;
   font-size: 16px;
@@ -128,6 +154,12 @@ p {
   background: #0063dd;
   padding: 16px 52px;
   text-transform: uppercase;
+}
+
+.btn_nav:hover {
+  color: #0f7bff;
+  background: #fff;
+  border: 2px solid #0f7bff;
 }
 
 .btn_blue {
@@ -293,7 +325,7 @@ h3 {
   width: 70%;
   display: block;
   position: absolute;
-  top: 32%;
+  top: 35%;
   left: 15%;
   z-index: -1;
 }
@@ -463,23 +495,35 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
 }
 
 .carousel__item {
   background-color: #ffffff;
-  background-image: url("../img/twitter.png");
+  background-image: url("../img/tw.png");
   background-repeat: no-repeat;
   background-position: 313px 40px;
   -webkit-box-shadow: 0px 0px 25px #f0f0f0;
           box-shadow: 0px 0px 25px #f0f0f0;
   min-width: 360px;
-  height: 215px;
+  width: 360px;
   margin: 45px 30px 40px 0;
   padding: 40px 30px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #929292;
   line-height: 27px;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.carousel__item_selected {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.carousel__item:first-child {
+  margin-left: -195px;
 }
 
 .carousel h3 {
@@ -499,6 +543,7 @@ h3 {
   background: #d4d4d4;
   margin-right: 10px;
   border-radius: 99px;
+  cursor: pointer;
 }
 
 .carousel__page_active {
@@ -911,9 +956,76 @@ h3 {
   .container {
     width: 420px;
   }
+  .device {
+    display: none;
+  }
+  header {
+    overflow: visible;
+  }
   .bottom-form input {
     width: 190px;
     padding: 14px 20px;
+  }
+  .nav {
+    padding: 0 3%;
+    height: 60px;
+    position: fixed !important;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 10px #b5b5b5;
+            box-shadow: 0px 0px 10px #b5b5b5;
+    z-index: 99;
+  }
+  .nav__logo {
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    font-size: 25px;
+    z-index: 99;
+  }
+  .nav__logo span {
+    margin-top: 35px !important;
+    padding: 15px 20px;
+  }
+  .nav__menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: fixed;
+    top: 40px;
+    width: 250px;
+    right: -270px;
+    height: 100vh;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    padding: 20px 0;
+    background: #0f7bff;
+    z-index: 12;
+  }
+  .nav__menu .btn {
+    background-color: #fff;
+    color: #0f7bff;
+    margin: 50px auto 0 auto !important;
+    display: block;
+    padding: 14px 45px !important;
+  }
+  .nav__menu li {
+    display: block;
+    width: 250px;
+  }
+  .nav__link {
+    color: #fff;
+    padding: 20px 0;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .nav__link_active {
+    background-color: #fff;
+    color: #0f7bff;
+  }
+  .hamburger {
+    display: block;
   }
   section {
     padding: 80px 0;
@@ -965,6 +1077,9 @@ h3 {
   #section-carousel {
     background-image: none;
   }
+  .carousel__item:first-child {
+    margin-left: -390px;
+  }
   .carousel-wrap {
     margin-left: 10%;
   }
@@ -1002,7 +1117,7 @@ h3 {
   }
   .trial-wrap .btn {
     margin-top: 40px;
-    padding: 14px 100px;
+    padding: 14px 93px;
   }
   .footer-links {
     width: 90%;
@@ -1056,9 +1171,12 @@ h3 {
     margin: 0 auto;
   }
   .carousel__item {
-    min-width: 85vw;
+    width: 360px;
     height: unset;
     background-position: 265px 40px;
+  }
+  .carousel__item:first-child {
+    margin-left: -330px;
   }
 }
 
@@ -1071,6 +1189,7 @@ h3 {
   }
   .carousel__item {
     background-position: 230px 40px;
+    min-width: 300px;
   }
   .trial-wrap .title {
     width: auto;

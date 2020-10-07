@@ -8,9 +8,11 @@ body
     overflow-x: hidden
     margin: 0
     padding: 0
+    background-color: #fff
 
 section
     padding: 130px 0
+    overflow: hidden
 
 *
     font-family: 'Quicksand'
@@ -44,8 +46,8 @@ p
 .nav
     top: 0
     box-sizing: border-box
-    position: fixed
-    width: 100%
+    position: absolute
+    width: 100vw
     padding: 0 140px
     display: flex
     justify-content: space-between
@@ -74,6 +76,8 @@ p
         color: $grey
         font-size: 16px
         font-weight: 500
+        &:hover
+            color: $blue
         &_active
             color: $blue
     
@@ -89,14 +93,20 @@ p
     &_nav
         color: #ffffff
         background: #0063dd
-        padding: 19px 52px
+        padding: 16px 52px
         text-transform: uppercase
     &_blue
         background: $blue
         color: #fff
+        &:hover
+            background: #ffffff
+            color: $blue
     &_white
         background: #ffffff
         color: $blue
+        &:hover
+            background: $blue
+            color: #fff
     &_square
         border-radius: 5px
         padding: 28px 72px
@@ -147,7 +157,7 @@ h3
                 &_white
                     border-bottom-left-radius: 0
                     border-top-left-radius: 0
-                    margin-left: -4px !important
+                    margin-left: -6px !important
 
     &_align-left
         text-align: left
@@ -306,6 +316,7 @@ h3
     background-image: url("../img/hands.png")
     background-repeat: no-repeat
     background-size: contain
+    overflow: hidden
 
 .carousel-wrap
     margin-left: 880px
@@ -324,6 +335,7 @@ h3
         padding: 40px 30px
         box-sizing: border-box
         color: $grey
+        line-height: 27px
     h3
         margin: 0 0 5px 0
     &__subtitle
@@ -482,10 +494,299 @@ h3
     background-image: url("../img/fb.png")   
 
 .scroll-top
+    position: absolute
+    right: -80px
     font-size: 30px
     background-color: #fff
     color: $blue
     border-radius: 5px
     padding: 4px 16px
-    margin-right: -120px
+    // margin-right: -120px
     cursor: pointer
+
+
+@media screen and (max-width: 1440px)
+    .device
+        bottom: -125px
+
+    .scroll-top
+        right: -61px
+
+@media screen and (max-width: 1279px)
+    .scroll-top
+        display: none
+
+    .container  
+        width: 1000px
+
+    .nav
+        padding: 0 20px
+
+    .cards__card
+        width: 310px
+    
+    .about 
+        .title
+            margin-left: 75px
+        &_reversed .title
+            margin-left: unset
+
+    .title_reduced
+        width: 315px
+
+    .cards_extended
+        width: 650px
+
+    #section-carousel
+        background-position-x: -460px
+
+    .carousel-wrap
+        margin-left: 360px
+
+    .selected-post
+        width: 490px
+        &__img
+            width: 100%
+
+    .post-list
+        width: 490px
+        &__text
+            width: 300px
+
+
+@media screen and (max-width: 1023px)
+    .container 
+        width: 740px
+
+        .cards
+            flex-direction: column
+            &__card
+                margin: 20px auto
+                width: 450px
+                padding: 40px
+            &_reduced:after
+                display: none   
+    
+    .about
+        &__photos
+            margin-left: unset
+        .title
+            margin-left: 45px
+            width: 296px
+        &:after
+            left: -180px
+        &_reversed
+            .about__photos
+                margin-right: unset
+            .title
+                margin-left: unset    
+            &:after
+                left: unset
+                right: -180px
+
+    .pricing
+        flex-direction: column
+        .title_reduced
+            width: 615px
+            text-align: center
+        .title__btns
+            margin-bottom: 40px !important
+
+    #section-carousel
+        background-size: cover
+        background-position-x: -530px
+
+    .carousel-wrap
+        margin-left: 330px
+
+    .news-wrap
+        flex-direction: column
+
+    .selected-post
+        width: 100%
+        margin-bottom: 40px
+
+    .post-list
+        width: 100%
+        &__item
+            margin-bottom: 20px
+        &__text
+            width: 70%
+
+    .trial-wrap
+        width: 655px
+
+    .footer-links
+        flex-direction: column
+        width: 430px
+        margin: 0 auto
+        .copyright
+            display: block
+            width: max-content
+            margin: 0 auto
+        span 
+            display: flex
+            justify-content: space-between
+            width: 100%
+            a
+                margin: 0
+        &__links
+            margin: 10px 0 15px 0
+
+@media screen and (max-width: 767px)
+    .container
+        width: 420px
+
+    .bottom-form
+        input
+            width: 190px
+            padding: 14px 20px
+
+    section
+        padding: 80px 0
+
+    .btn
+        padding: 14px 35px
+
+    .title
+        width: 90%
+        .btn
+            margin: 0 10px
+            &_white
+                margin-left: -16px !important
+        &_reduced
+            width: 90% !important
+
+    .device
+        bottom: -235px
+
+    .about
+        flex-direction: column
+        &__photos
+            margin-left: unset
+        .title
+            margin-left: unset
+            width: unset
+            text-align: center
+            margin-top: 100px
+        &_reversed:after
+            top: -130px !important
+
+    .cards
+        &__card
+            width: 90% !important
+            height: unset
+            padding: 40px 20px
+            &_extended
+                width: 90vw !important
+
+    #section-carousel
+        background-image: none
+
+    .carousel-wrap
+        margin-left: 10%
+
+    .selected-post
+        width: unset
+        padding: 0 5vw
+
+    .post-list
+        width: 90%
+        margin: 0 auto
+        &__item
+            flex-direction: column
+            margin-bottom: 40px
+        &__img
+            width: 100%
+        &__text
+            width: 100%
+            margin-top: 20px
+            p
+                margin-top: 10px
+
+    .trial-wrap
+        width: 90%
+        flex-direction: column
+        .btn
+            margin-top: 40px
+            padding: 14px 100px
+
+    .footer-links
+        width: 90%
+        &__links
+            margin: 15px 0 20px 0
+
+
+@media screen and (max-width: 424px)
+    .container
+        width: 90vw
+
+    header
+        .title
+            margin-top: 115px
+        .btn
+            margin: 10px 0 !important
+            padding: 14px 80px
+
+    .device
+        display: none
+
+    .bottom-form
+        input
+            width: 45vw
+        .btn
+            padding: 14px 20px
+
+    .footer-links 
+        font-size: 14px
+
+    .selected-post
+        padding: 0
+
+    .title__btns .btn
+        margin: 0
+    
+    .title:not(.title_reduced) .btn_white
+        margin-left: 0 !important
+
+    .about
+        img
+            width: 90vw
+        &:after
+            transform: scale(.8)
+
+    .carousel-wrap
+        width: 90vw
+        margin: 0 auto
+
+    .carousel
+        &__item
+            min-width: 85vw
+            height: unset
+            background-position: 265px 40px
+
+
+@media screen and (max-width: 374px)
+    .bottom-form
+        input
+            width: 39vw
+
+    .footer-links 
+        font-size: 12px
+    
+    .carousel__item
+        background-position: 230px 40px
+
+    .trial-wrap 
+        .title
+            width: auto
+            text-align: center
+        .btn
+            padding: 14px 85px
+
+    .about:after
+        transform: scale(.7)
+        top: -160px
+
+    .about_reversed:after
+        top: -220px !important

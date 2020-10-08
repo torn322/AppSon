@@ -73,6 +73,8 @@ p {
   font-size: 36px;
   font-weight: 700;
   cursor: pointer;
+  -webkit-box-shadow: 0 0 1px #fff;
+          box-shadow: 0 0 1px #fff;
 }
 
 .nav__logo span {
@@ -284,13 +286,13 @@ h3 {
   color: #ffffff;
   background: #0f7bff;
   border-radius: 999px;
-  -webkit-box-shadow: 0px 0px 10px #929292;
-          box-shadow: 0px 0px 10px #929292;
+  -webkit-box-shadow: 0px 0px 20px #fff;
+          box-shadow: 0px 0px 20px #fff;
   position: absolute;
   bottom: 10px;
   left: calc(50vw - 26.5px);
   cursor: pointer;
-  opacity: .5;
+  opacity: .8;
 }
 
 .arrow:hover {
@@ -321,7 +323,7 @@ h3 {
 
 .cards_reduced:after {
   content: "";
-  border-bottom: 1px solid #0f7bff;
+  border-bottom: 1px dashed #0f7bff;
   width: 70%;
   display: block;
   position: absolute;
@@ -480,6 +482,10 @@ h3 {
           align-items: center;
 }
 
+.pricing .title .btn {
+  width: 165px;
+}
+
 #section-carousel {
   background-image: url("../img/hands.png");
   background-repeat: no-repeat;
@@ -505,8 +511,8 @@ h3 {
   background-position: 313px 40px;
   -webkit-box-shadow: 0px 0px 25px #f0f0f0;
           box-shadow: 0px 0px 25px #f0f0f0;
-  min-width: 360px;
-  width: 360px;
+  min-width: 400px;
+  width: 400px;
   margin: 45px 30px 40px 0;
   padding: 40px 30px;
   -webkit-box-sizing: border-box;
@@ -523,7 +529,7 @@ h3 {
 }
 
 .carousel__item:first-child {
-  margin-left: -195px;
+  margin-left: -130px;
 }
 
 .carousel h3 {
@@ -634,7 +640,7 @@ h3 {
   background-image: url("../img/post1.jpg");
   background-size: cover;
   background-position: center center;
-  background-repeat: 5px;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -793,6 +799,13 @@ h3 {
   .scroll-top {
     right: -61px;
   }
+  .carousel__item {
+    width: 360px;
+    min-width: 360px;
+  }
+  .carousel__item:first-child {
+    margin-left: -260px;
+  }
 }
 
 @media screen and (max-width: 1279px) {
@@ -801,6 +814,15 @@ h3 {
   }
   .container {
     width: 1000px;
+  }
+  .pricing .title .btn {
+    width: 155px;
+  }
+  header .title {
+    margin-top: 360px;
+  }
+  .device {
+    bottom: 0;
   }
   .nav {
     padding: 0 20px;
@@ -844,18 +866,24 @@ h3 {
   .container {
     width: 740px;
   }
-  .container .cards {
+  header .title {
+    margin-top: 300px;
+  }
+  .device {
+    bottom: -130px;
+  }
+  .cards {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .container .cards__card {
+  .cards__card {
     margin: 20px auto;
     width: 450px;
     padding: 40px;
   }
-  .container .cards_reduced:after {
+  .cards_reduced:after {
     display: none;
   }
   .about__photos {
@@ -897,6 +925,9 @@ h3 {
   }
   .carousel-wrap {
     margin-left: 330px;
+  }
+  .carousel__item:first-child {
+    margin-left: -390px;
   }
   .news-wrap {
     -webkit-box-orient: vertical;
@@ -991,7 +1022,7 @@ h3 {
         -ms-flex-direction: column;
             flex-direction: column;
     position: fixed;
-    top: 40px;
+    top: 44px;
     width: 250px;
     right: -270px;
     height: 100vh;
@@ -1138,6 +1169,12 @@ h3 {
     margin: 10px 0 !important;
     padding: 14px 80px;
   }
+  .pricing .title .btn {
+    width: 151px;
+  }
+  .pricing .title .btn_white {
+    margin-left: -4px;
+  }
   .device {
     display: none;
   }
@@ -1166,6 +1203,9 @@ h3 {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
   }
+  .about_reversed:after {
+    top: -180px !important;
+  }
   .carousel-wrap {
     width: 90vw;
     margin: 0 auto;
@@ -1177,6 +1217,9 @@ h3 {
   }
   .carousel__item:first-child {
     margin-left: -330px;
+  }
+  section {
+    padding: 50px 0;
   }
 }
 
@@ -1196,7 +1239,7 @@ h3 {
     text-align: center;
   }
   .trial-wrap .btn {
-    padding: 14px 85px;
+    padding: 14px 70px;
   }
   .about:after {
     -webkit-transform: scale(0.7);
@@ -1205,6 +1248,16 @@ h3 {
   }
   .about_reversed:after {
     top: -220px !important;
+  }
+  header {
+    background-position: -10px 20px;
+  }
+  .pricing .title .btn {
+    width: 127px;
+    padding: 14px;
+  }
+  .pricing .title .btn_white {
+    margin-left: -4px;
   }
 }
 /*# sourceMappingURL=style.css.map */

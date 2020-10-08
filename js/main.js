@@ -1,18 +1,43 @@
 $(document).ready(function () {
 
-    navBar = {
+    const navBar = {
         isFixed: false,
-        fix: () => {
+        isOpen: false,
+
+        fix() {
             $('nav').css('top', -100)
             $('nav').animate({
                 top: 0
             }, 'fast')
             $('nav').addClass('nav_fixed')
-            navBar.isFixed = true
+            this.isFixed = true
         },
-        unfix: () => {
+
+        unfix() {
             $('nav').removeClass('nav_fixed')
-            navBar.isFixed = false
+            this.isFixed = false
+        },
+
+        show() {
+            $('.nav__logo').animate({
+                marginTop: -250
+            }, 'fast')
+            $('.nav__menu').animate({
+                right: 0
+            }, 'fast')
+
+            this.isOpen = true
+        },
+
+        hide() {
+            $('.nav__menu').animate({
+                right: -270
+            }, 'fast')
+            $('.nav__logo').animate({
+                marginTop: 0
+            }, 'fast')
+
+            this.isOpen = false
         }
     }
 
@@ -45,8 +70,9 @@ $(document).ready(function () {
         }
 
         // console.log(winScrollTop, "  ",  $('#scroll-down').offset().top, navBar.isFixed)
-        if (winScrollTop > $('#scroll-down').offset().top && !navBar.isFixed && window.innerWidth > 425) {
+        if (winScrollTop > $('#scroll-down').offset().top && !navBar.isFixed && window.innerWidth > 767) {
             navBar.fix()
+            console.log(window.innerWidth)
         } else if (winScrollTop < $('#scroll-down').offset().top && navBar.isFixed) {
             navBar.unfix()
         }
@@ -65,16 +91,21 @@ $(document).ready(function () {
     $('#scroll-down').click(function () {
         $('html, body').animate({
             scrollTop: $("#section-features").offset().top
-        }, 400);
+        }, 'slow');
     })
 
     $('.carousel__page').click(function () {
         let page = $(this).data('for')
-        let len = page * 390 - 195
+        let len = page * 430 - 300
 
-        if (window.innerWidth < 1024) {
+        if (window.innerWidth < 1030) {
+            len = page * 390 - 130
+        } 
+
+        if (window.innerWidth < 780) {
             len = page * 390
         } 
+
         if (window.innerWidth < 425) {
             len = page * 330
         }
@@ -102,26 +133,15 @@ $(document).ready(function () {
 
     $('.nav__menu li').click(function () {
         if (window.innerWidth < 768) {
-            $('.nav__menu').animate({
-                right: -270
-            }, 'fast')
+            navBar.hide()
         }
     })
 
     $('.hamburger').click(function () {
-        const isOpen = $('.nav__menu').data('isOpen')
-
-        if (isOpen) {
-            $('.nav__menu').animate({
-                right: -270
-            }, 'fast')
-
-            $('.nav__menu').data('isOpen', false)
+        if (navBar.isOpen) {
+            navBar.hide()
         } else {
-            $('.nav__menu').animate({
-                right: 0
-            }, 'fast')
-            $('.nav__menu').data('isOpen', true)
+            navBar.show()
         }
     })
 

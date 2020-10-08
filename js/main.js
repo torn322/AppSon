@@ -100,6 +100,14 @@ $(document).ready(function () {
         })
     })
 
+    $('.nav__menu li').click(function () {
+        if (window.innerWidth < 768) {
+            $('.nav__menu').animate({
+                right: -270
+            }, 'fast')
+        }
+    })
+
     $('.hamburger').click(function () {
         const isOpen = $('.nav__menu').data('isOpen')
 
